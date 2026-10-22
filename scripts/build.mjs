@@ -1,0 +1,11 @@
+import { cp, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+await mkdir('dist', { recursive: true });
+await cp('public', 'dist', { recursive: true });
+const html = await readFile('dist/index.html', 'utf8');
+const json = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
+if (!json) throw new Error('Missing structured data');
+const hash = createHash('sha256').update(json).digest('base64');
+const headers = await readFile('dist/_headers', 'utf8');
+await writeFile('dist/_headers', headers.replace(/'sha256-[^']*'/, `'sha256-${hash}'`));
+console.log('Built static site: dist/');
