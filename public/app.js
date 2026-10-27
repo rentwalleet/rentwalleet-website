@@ -8,9 +8,9 @@ const STORE_URLS = {
 };
 document.querySelectorAll('[data-store]').forEach(link => { link.href = STORE_URLS[link.dataset.store]; });
 
-// TODO: 실제 카카오 상담 채널 URL을 입력하세요. 예: https://pf.kakao.com/실제채널/chat
+// 카카오 채널 URL. 채널 주소가 변경되면 여기에서 수정하세요.
 // 미설정 상태에서는 외부 샘플 채널로 연결하지 않고 준비 중 안내를 표시합니다.
-const KAKAO_URL = '';
+const KAKAO_URL = 'https://pf.kakao.com/_WxcNmX';
 const kakaoButton = document.getElementById('kakao-button');
 const contactDialog = document.getElementById('contact-dialog');
 kakaoButton.addEventListener('click', () => {

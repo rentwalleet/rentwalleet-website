@@ -11,7 +11,7 @@
 - 최종 작업 경로: `C:\Users\user\Documents\Codex\Projects\rentwalleet\rentwalleet-web`
 - 현재 생성 위치: `C:\Users\user\Documents\Codex\Projects\rentwalleet\Images\rentwalleet-web`
 - 경로 차이 사유: 현재 세션이 `Images` 하위에만 쓰기를 허용합니다. 최종 폴더로 이동 전 기존 파일을 확인하세요. 기존 최종 폴더는 확인 시 비어 있었습니다.
-- 원격 push: 미완료. GitHub 커넥터가 저장소에 `push: false`를 반환했고, 터미널 GitHub 연결은 네트워크 오류로 실패했습니다.
+- 원격 push: 사용자가 VS Code에서 최초 업로드를 완료했습니다.
 - 브라우저 육안 검증: 미완료. 미리보기 브라우저가 세션 오류를 반환했습니다. 실제 PC/모바일 화면 확인이 남아 있습니다.
 
 ## 구성 및 디자인
@@ -69,7 +69,7 @@ npm run preview
 ## 임시 주소 및 이미지 교체
 
 - 앱 주소: `public/app.js` 상단 `STORE_URLS`와 `public/index.html`의 `data-store` 링크를 함께 수정합니다. 현재 사용자 지정 자사 앱 드림페이로 연결됩니다. 출시 전임을 화면과 FAQ에 표시했습니다. 임대리로 교체한 뒤 해당 임시 연결 안내도 변경하세요.
-- 카카오: `public/app.js`의 `KAKAO_URL`에 실제 채널 URL을 입력합니다. 비어 있으면 준비 중 dialog와 고객센터 번호를 표시합니다. 샘플 아이콘은 `floating-kakao.svg`, `floating-download.svg`입니다.
+- 카카오: `public/app.js`의 `KAKAO_URL`에 제공된 채널 주소가 설정되어 있습니다. 비어 있으면 준비 중 dialog와 고객센터 번호를 표시합니다. 샘플 아이콘은 `floating-kakao.svg`, `floating-download.svg`입니다.
 - 플로팅 다운로드: 하단 `#download` 영역으로 이동합니다.
 - SNS: `public/index.html`의 `.social-links`에서 Instagram·YouTube·Blog·Facebook 주소와 기본 SVG 아이콘을 변경합니다. 현재 제공된 임시 계정 주소를 사용합니다.
 - 상단 배너: `public/index.html`에서 각 `.hero-slide`의 `--slide-bg`가 단색 코드입니다. PC 권장 2560×1440px (최소 1920×1080px), 모바일 별도 1080×1440px. 실제 이미지에 텍스트를 합성하기보다 HTML 제목을 유지하세요. 교체 위치와 크기는 코드에도 주석으로 남겼습니다.
@@ -165,5 +165,7 @@ git push -u origin main
 | 날짜 | 변경 |
 | --- | --- |
 | 2026-10-22 | 최초 구현: 제공 자료 기반 반응형 원페이지, 배너·리워드·고정 배경·다운로드·푸터·플로팅 버튼, 약관 원문, SEO, 정적 빌드 및 배포 가이드 작성. |
+
+| 2026-10-27 | 카카오 상담 플로팅 버튼에 제공된 채널 주소 연결 및 접근성 설명 변경. |
 
 다음 수정부터 이 표에 날짜와 실제 변경 내용을 추가합니다.
