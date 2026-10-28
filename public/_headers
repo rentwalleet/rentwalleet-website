@@ -8,5 +8,9 @@
 /assets/*
   Cache-Control: public, max-age=86400
 
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate
+
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
