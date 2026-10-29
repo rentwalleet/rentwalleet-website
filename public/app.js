@@ -1,12 +1,9 @@
-/* 출시 후 임대리 스토어 주소로 교체하세요.
- * HTML의 data-store 링크도 함께 수정해 JS 비활성화 시에도 같은 주소가 열리게 합니다.
- * 현재 링크는 사용자가 지정한 자사 앱 '드림페이'입니다.
- */
-const STORE_URLS = {
-  android: 'https://play.google.com/store/apps/details?id=com.splatform.dreampay&pcampaignid=web_share',
-  ios: 'https://apps.apple.com/kr/app/%EB%93%9C%EB%A6%BC%ED%8E%98%EC%9D%B4/id6752551083'
-};
-document.querySelectorAll('[data-store]').forEach(link => { link.href = STORE_URLS[link.dataset.store]; });
+document.querySelectorAll('[data-store]').forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    window.alert('임대리 앱은 출시 준비 중입니다.');
+  });
+});
 
 document.querySelectorAll('.site-footer .social-links a').forEach(link => {
   link.addEventListener('click', event => {
