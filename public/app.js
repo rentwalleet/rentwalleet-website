@@ -8,6 +8,13 @@ const STORE_URLS = {
 };
 document.querySelectorAll('[data-store]').forEach(link => { link.href = STORE_URLS[link.dataset.store]; });
 
+document.querySelectorAll('.site-footer .social-links a').forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    window.alert('SNS 채널은 준비 중입니다.');
+  });
+});
+
 // 카카오 채널 URL. 채널 주소가 변경되면 여기에서 수정하세요.
 // 미설정 상태에서는 외부 샘플 채널로 연결하지 않고 준비 중 안내를 표시합니다.
 const KAKAO_URL = 'https://pf.kakao.com/_WxcNmX';
