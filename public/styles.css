@@ -1104,6 +1104,12 @@ em{
   max-height:83px;
   object-fit:contain
 }
+.footer-brand .company-wordmark{
+  font-size:26px;
+  font-weight:750;
+  letter-spacing:-.04em;
+  color:inherit
+}
 .footer-brand p{
   font-size:13px;
   line-height:1.8;
