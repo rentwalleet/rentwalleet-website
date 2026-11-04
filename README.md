@@ -12,7 +12,7 @@
 
 [임대리 웹사이트](https://rentwalleet.com) · [카카오 상담](https://pf.kakao.com/_WxcNmX)
 
-고객센터 **1533-9861** | 평일 10:00~18:00
+고객센터 **02-3482-2085** | 평일 10:00~18:00
 이메일 **help@rentwalleet.com**
 
 © 2026 주식회사 월리트
