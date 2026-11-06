@@ -2228,5 +2228,5 @@ dialog .fine-print{
   .brand-banner-accent{width:45px;left:145px;top:-30px}
   .brand-banner-downloads{left:8%;right:8%;top:40%;bottom:auto;gap:12px}
   .brand-store-button{width:50%;height:48px}
-  .brand-banner-visual{right:7%;width:auto;height:49%;max-width:90%;object-fit:contain;object-position:bottom}
+  .brand-banner-visual{left:50%;right:auto;transform:translateX(-50%);width:auto;height:49%;max-width:90%;object-fit:contain;object-position:center bottom}
 }
