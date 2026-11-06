@@ -48,65 +48,26 @@
     </div>
   </header>
   <main id="main">
-    <!-- TOP SLIDE BANNER: 각 .hero-slide의 --slide-bg가 단색 배경 코드입니다.
-      추후 이미지 권장: PC 2560×1440px(최소 1920×1080px), 모바일 별도 1080×1440px.
-      텍스트는 이미지에 합성하지 말고 HTML로 유지하세요. 주요 오브젝트는 중앙 1200px 안쪽 배치.
-      실제 배너를 적용할 경우 picture/source 또는 CSS background-image 사용. 아래 앱 목업과 중복되지 않게 조정.
-    -->
-    <section class="hero" id="top" aria-roledescription="캐러셀" aria-label="임대리 주요 혜택">
+    <!-- Main banner: artwork positions use the supplied 1920 x 820 reference. -->
+    <section class="hero" id="top" aria-roledescription="캐러셀" aria-label="임대리 주요 안내">
       <div class="hero-slides">
-        <article class="hero-slide is-active" id="slide-1" style="--slide-bg:#fff4ec" aria-label="1 / 2: 월세 카드결제">
-          <div class="hero-grid wrap">
-            <div class="hero-copy">
-              <p class="eyebrow"><span class="status-dot"></span> 매달의 월세를, 새로운 기회로</p>
-              <h1>월세는 카드로.<br>혜택은 <em>리워드로.</em></h1>
-              <p class="hero-description">그냥 내던 월세가 달라지는 순간.<br>결제의 여유부터 친구와 나누는 혜택까지,<br class="mobile-break"> 임대리로
-                시작하세요.</p>
-              <a class="button button-dark" href="#download">임대리 앱 만나보기 <span aria-hidden="true">↗</span></a>
-              <p class="launch-note">임대리는 출시 준비 중이에요.</p>
+        <article class="hero-slide hero-brand-slide is-active" id="slide-1" aria-label="1 / 1: 세상편한 임대리">
+          <div class="brand-banner">
+            <div class="brand-banner-copy">
+              <img class="brand-banner-accent" src="/assets/top_slide_banner/top_slide_banner_003.png" alt="" width="78" height="53">
+              <h1>세상편한</h1>
+              <p>임대료 자동결제 플랫폼</p>
             </div>
-            <div class="hero-art" aria-label="임대리 앱 홈 화면 예시">
-              <div class="hero-disc" aria-hidden="true"></div>
-              <span class="orbit-word" aria-hidden="true">RENT, REWARDED.</span>
-              <div class="float-label label-payment" aria-hidden="true"><span class="check-circle">✓</span><span>매달 내는
-                  월세<br><strong>이제 카드로 가볍게</strong></span></div>
-              <img class="hero-phone" src="/assets/app-home.png" alt="계약 현황과 결제 메뉴를 한눈에 확인하는 임대리 홈 화면 예시" width="640"
-                height="1308" fetchpriority="high">
-              <div class="float-label label-reward" aria-hidden="true"><span class="point-coin">P</span><span>친구와 함께
-                  쌓는<br><strong>임대 리~워드</strong></span></div>
-              <span class="art-spark spark-one" aria-hidden="true">✳</span>
-              <span class="art-spark spark-two" aria-hidden="true">+</span>
-            </div>
-          </div>
-        </article>
-        <!-- TOP SLIDE 02 배경 코드: #edf5f3. 권장 이미지 크기는 위 주석과 동일합니다. -->
-        <article class="hero-slide" id="slide-2" style="--slide-bg:#edf5f3" aria-label="2 / 2: 친구 초대 리워드" hidden inert>
-          <div class="hero-grid wrap">
-            <div class="hero-copy">
-              <p class="eyebrow"><span class="status-dot"></span> 좋은 혜택은 함께 나누니까</p>
-              <h2>친구를 초대하면,<br>함께 쌓는 <em>리워드.</em></h2>
-              <p class="hero-description">내 추천 코드로 연결된 친구가 결제하면<br>친구도 나도 포인트를 받아요.</p>
-              <a class="button button-dark" href="#rewards">리워드 알아보기 <span aria-hidden="true">↗</span></a>
-              <p class="launch-note">리워드 지급 및 사용 조건은 서비스 정책을 따릅니다.</p>
-            </div>
-            <div class="hero-art reward-art" aria-label="임대리 포인트 내역 화면 예시">
-              <div class="hero-disc" aria-hidden="true"></div>
-              <span class="orbit-word" aria-hidden="true">BETTER, TOGETHER.</span>
-              <img class="hero-phone" src="/assets/app-rewards.png" alt="리워드 포인트와 추천인 현황을 확인하는 마이 화면 예시" width="560"
-                height="1144">
-              <div class="float-label label-reward" aria-hidden="true"><span class="point-coin">P</span><span>월세에
-                  더하는<br><strong>기분 좋은 리워드</strong></span></div>
-              <span class="art-spark spark-one" aria-hidden="true">✳</span>
-            </div>
+            <img class="brand-banner-logo" src="/assets/top_slide_banner/top_slide_banner_004.png" alt="임대리" width="314" height="152">
+            <img class="brand-banner-visual" src="/assets/top_slide_banner/top_slide_banner_002.png" alt="임대리 앱의 계약 관리와 월세 결제 화면" width="670" height="820" fetchpriority="high">
           </div>
         </article>
       </div>
-      <div class="hero-controls wrap">
+      <div class="hero-controls wrap" hidden>
         <div class="slide-controls" role="group" aria-label="배너 조작">
           <button class="slide-dot is-active" type="button" data-slide="0" aria-label="첫 번째 배너 보기"
             aria-current="true"></button>
-          <button class="slide-dot" type="button" data-slide="1" aria-label="두 번째 배너 보기" aria-current="false"></button>
-          <span class="slide-count" aria-live="off">01 <span>/ 02</span></span>
+          <span class="slide-count" aria-live="off">01 <span>/ 01</span></span>
           <button class="slide-toggle" type="button" aria-label="배너 자동 재생 시작" aria-pressed="false">▶</button>
         </div>
         <a class="scroll-hint" href="#benefits">새로운 월세 생활 알아보기 <span aria-hidden="true">↓</span></a>
