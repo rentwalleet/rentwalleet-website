@@ -2210,23 +2210,24 @@ dialog .fine-print{
 }
 .brand-banner{
   position:relative;
-  width:100%;
-  max-width:1920px;
+  width:min(1360px,calc(100% - 96px));
+  container-type:inline-size;
   aspect-ratio:1920 / 820;
   margin-inline:auto;
 }
-.brand-banner-copy{position:absolute;left:11.82%;top:41.9%;z-index:1;white-space:nowrap}
-.brand-banner-copy h1{margin:0;color:#fff;font-size:clamp(32px,4.48vw,86px);font-weight:900;line-height:1.08;letter-spacing:-.065em}
-.brand-banner-copy p{margin:0;color:#191b18;font-size:clamp(13px,1.875vw,36px);font-weight:900;line-height:1.3;letter-spacing:-.055em}
+.brand-banner-copy{width:max-content;position:absolute;left:11.82%;top:41.9%;z-index:1;white-space:nowrap}
+.brand-banner-copy h1{margin:0;color:#fff;display:flex;justify-content:space-between;gap:.04em;font-size:4.2cqw;font-weight:900;line-height:1.08;letter-spacing:0}
+.brand-banner-copy p{margin:0;color:#191b18;font-size:1.875cqw;font-weight:900;line-height:1.3;letter-spacing:-.055em}
 .brand-banner-accent{position:absolute;width:23.35%;height:auto;left:-11.4%;top:-35%;}
 .brand-banner-logo{position:absolute;left:31.98%;top:38.17%;width:16.35%;height:auto}
 .brand-banner-visual{position:absolute;left:55.73%;bottom:0;width:34.9%;height:auto}
 .hero-controls[hidden]{display:none}
-@media(min-width:1920px){.brand-banner-copy h1{font-size:86px}.brand-banner-copy p{font-size:36px}}
+@media(max-width:1100px){.brand-banner{width:calc(100% - 80px)}}
+@media(max-width:760px){.brand-banner{width:calc(100% - 44px)}}
 @media(max-width:600px){
   .brand-banner{aspect-ratio:auto;height:640px;max-height:calc(100svh - 64px);min-height:520px}
   .brand-banner-copy{left:12%;top:9%}
-  .brand-banner-copy h1{font-size:clamp(42px,10vw,60px)}
+  .brand-banner-copy h1{font-size:clamp(35px,8vw,48px)}
   .brand-banner-copy p{font-size:clamp(17px,4vw,24px)}
   .brand-banner-logo{left:64%;top:10%;width:29%}
   .brand-banner-visual{left:auto;right:5%;width:auto;height:69%;max-width:90%;object-fit:contain;object-position:bottom}
