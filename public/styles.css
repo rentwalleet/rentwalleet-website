@@ -2198,31 +2198,35 @@ dialog .fine-print{
   }
 }
 
-/* Supplied main banner, composed on a 1920 x 820 canvas. */
+/* Main banner: supplied 1826 x 854 reference, with live Pretendard text. */
 .hero-brand-slide{
-  background:#ffae24 url('/assets/top_slide_banner/top_slide_banner_001.png') center / cover no-repeat;
+  width:calc(100% - 96px);
+  max-width:1826px;
+  margin:15px auto 0;
+  border-radius:50px;
+  background:#e4a58e url('/assets/top_slide_banner/top_slide_banner_005.png') center / cover no-repeat;
 }
-.brand-banner{
-  position:relative;
-  width:min(1360px,calc(100% - 96px));
-  container-type:inline-size;
-  aspect-ratio:1920 / 820;
-  margin-inline:auto;
-}
-.brand-banner-copy{width:max-content;position:absolute;left:11.82%;top:41.9%;z-index:1;white-space:nowrap}
-.brand-banner-copy h1{margin:0;color:#fff;display:flex;justify-content:space-between;gap:.04em;font-size:4.2cqw;font-weight:900;line-height:1.08;letter-spacing:0}
-.brand-banner-copy p{margin:0;color:#191b18;font-size:1.875cqw;font-weight:900;line-height:1.3;letter-spacing:-.055em}
-.brand-banner-accent{position:absolute;width:23.35%;height:auto;left:-11.4%;top:-35%;}
-.brand-banner-logo{position:absolute;left:31.98%;top:38.17%;width:16.35%;height:auto}
-.brand-banner-visual{position:absolute;left:55.73%;bottom:0;width:34.9%;height:auto}
+.brand-banner{position:relative;width:100%;aspect-ratio:1826 / 854;container-type:inline-size;margin-inline:auto;font-family:Pretendard,sans-serif}
+.brand-banner-copy{position:absolute;left:12%;top:22%;z-index:1}
+.brand-banner-copy h1{margin:0;color:#fff;font-size:4.16cqw;font-weight:800;line-height:1.12;letter-spacing:-.045em;text-shadow:0 7px 7px #85452a26}
+.brand-banner-copy p{margin-top:2.25cqw;color:#963813;font-size:1.75cqw;font-weight:650;line-height:1.4;letter-spacing:-.035em}
+.brand-banner-accent{position:absolute;width:4.87cqw;height:auto;left:14.2cqw;top:-3cqw}
+.brand-banner-visual{position:absolute;right:9%;bottom:0;width:36.69%;height:auto}
+.brand-banner-downloads{position:absolute;left:11.6%;bottom:10.8%;display:flex;gap:1.3cqw;z-index:2}
+.brand-store-button{display:flex;align-items:center;justify-content:center;width:14.46cqw;height:4.1cqw;border-radius:100px;background:#fff;transition:box-shadow .2s}
+.brand-store-button:hover{box-shadow:0 6px 20px #71351126}
+.brand-store-button img{width:78%;height:auto}
 .hero-controls[hidden]{display:none}
-@media(max-width:1100px){.brand-banner{width:calc(100% - 80px)}}
-@media(max-width:760px){.brand-banner{width:calc(100% - 44px)}}
+@media(max-width:1100px){.hero-brand-slide{width:calc(100% - 80px);border-radius:32px}}
+@media(max-width:760px){.hero-brand-slide{width:calc(100% - 44px);border-radius:26px}}
 @media(max-width:600px){
-  .brand-banner{aspect-ratio:auto;height:640px;max-height:calc(100svh - 64px);min-height:520px}
-  .brand-banner-copy{left:12%;top:9%}
-  .brand-banner-copy h1{font-size:clamp(35px,8vw,48px)}
-  .brand-banner-copy p{font-size:clamp(17px,4vw,24px)}
-  .brand-banner-logo{left:64%;top:10%;width:29%}
-  .brand-banner-visual{left:auto;right:5%;width:auto;height:69%;max-width:90%;object-fit:contain;object-position:bottom}
+  .hero-brand-slide{margin-top:12px}
+  .brand-banner{aspect-ratio:auto;height:760px}
+  .brand-banner-copy{left:8%;top:8%}
+  .brand-banner-copy h1{font-size:clamp(30px,8.2vw,46px)}
+  .brand-banner-copy p{margin-top:20px;font-size:clamp(15px,3.8vw,19px)}
+  .brand-banner-accent{width:45px;left:145px;top:-30px}
+  .brand-banner-downloads{left:8%;right:8%;top:40%;bottom:auto;gap:12px}
+  .brand-store-button{width:50%;height:48px}
+  .brand-banner-visual{right:7%;width:auto;height:49%;max-width:90%;object-fit:contain;object-position:bottom}
 }
