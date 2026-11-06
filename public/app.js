@@ -75,3 +75,33 @@ hero.addEventListener('focusout', () => { requestAnimationFrame(() => { focused 
 document.addEventListener('visibilitychange', syncTimer);
 reduceMotion.addEventListener('change', syncTimer);
 new IntersectionObserver(entries => { inView = entries[0].isIntersecting; syncTimer(); }).observe(hero);
+
+// Reveal below-banner content once; the company footer is outside main.
+if ('IntersectionObserver' in window && !reduceMotion.matches) {
+  const selector = 'h2, h3, p, ul, a, article, details, .card-scene, .app-stage, .tax-number, .benefit-strip > div, .feature-rows > div, .download-art';
+  const candidates = [...document.querySelectorAll('main section:not(.hero)')]
+    .flatMap(section => [...section.querySelectorAll(selector)]);
+  const candidateSet = new Set(candidates);
+  const targets = candidates.filter(element => {
+    for (let parent = element.parentElement; parent && parent.tagName !== 'SECTION'; parent = parent.parentElement) {
+      if (candidateSet.has(parent)) return false;
+    }
+    return true;
+  });
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
+  targets.forEach(element => {
+    element.classList.add('scroll-fade');
+    revealObserver.observe(element);
+  });
+  reduceMotion.addEventListener('change', event => {
+    if (!event.matches) return;
+    targets.forEach(element => element.classList.add('is-visible'));
+    revealObserver.disconnect();
+  });
+}

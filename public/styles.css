@@ -2230,3 +2230,12 @@ dialog .fine-print{
   .brand-store-button{width:50%;height:48px}
   .brand-banner-visual{left:50%;right:auto;transform:translateX(-50%);width:auto;height:49%;max-width:90%;object-fit:contain;object-position:center bottom}
 }
+
+/* Draw the FAQ plus with CSS so its appearance is consistent across devices. */
+.faq-list summary>.faq-expand-icon{position:relative;flex:0 0 20px;width:20px;height:20px}
+.faq-expand-icon::before,.faq-expand-icon::after{content:'';position:absolute;background:#92979d;border-radius:1px;left:50%;top:50%;transform:translate(-50%,-50%)}
+.faq-expand-icon::before{width:16px;height:2px}
+.faq-expand-icon::after{width:2px;height:16px}
+.scroll-fade{opacity:0;transition:opacity .7s ease}
+.scroll-fade.is-visible,.scroll-fade:focus-within{opacity:1}
+@media(prefers-reduced-motion:reduce){.scroll-fade{opacity:1;transition:none}}
