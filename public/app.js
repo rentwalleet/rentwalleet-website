@@ -65,7 +65,7 @@ toggle.addEventListener('click', () => {
   autoplay = !autoplay;
   toggle.setAttribute('aria-pressed', String(autoplay));
   toggle.setAttribute('aria-label', autoplay ? '배너 자동 재생 정지' : '배너 자동 재생 시작');
-  toggle.textContent = autoplay ? 'Ⅱ' : '▶';
+  toggle.textContent = autoplay ? '\uC790\uB3D9 \uC7AC\uC0DD \uC815\uC9C0' : '\uC790\uB3D9 \uC7AC\uC0DD';
   syncTimer();
 });
 hero.addEventListener('mouseenter', () => { hovered = true; syncTimer(); });

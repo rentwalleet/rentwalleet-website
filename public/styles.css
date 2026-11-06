@@ -476,13 +476,7 @@ em{
   color:#555b61;
   font-size:17px
 }
-.check-list li:before{
-  content:'✓';
-  display:inline-block;
-  color:var(--orange);
-  margin-right:13px;
-  font-weight:800
-}
+
 .section-copy .fine-print{
   max-width:370px
 }
