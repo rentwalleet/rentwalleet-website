@@ -406,8 +406,14 @@ em{
   font-size:20px
 }
 .intro{
-  text-align:center;
   padding-block:64px
+}
+.intro>.eyebrow,
+.intro>h2,
+.intro>.section-description{
+  max-width:848px;
+  margin-inline:auto;
+  text-align:left
 }
 .intro>.eyebrow{
   color:#555;
@@ -422,6 +428,7 @@ em{
 }
 .benefit-strip{
   display:grid;
+  text-align:center;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:24px;
   max-width:826px;
@@ -625,145 +632,73 @@ em{
   right:0;
   text-align:center
 }
+.reward-section{
+  padding-block:clamp(42px,4vw,64px)
+}
+.reward-section>.wrap{
+  max-width:924px
+}
 .reward-heading{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap:24px;
-  margin-bottom:56px
+  margin-bottom:clamp(28px,4.2vw,54px)
+}
+.reward-heading h2{
+  font-size:clamp(32px,4.15vw,54px);
+  line-height:1.16
 }
 .reward-heading .section-description{
-  font-size:19px;
-  margin:0 0 5px
+  margin:12px 0 0;
+  font-size:clamp(16px,1.5vw,20px);
+  line-height:1.45
 }
 .reward-grid{
   display:grid;
-  grid-template-columns:1.1fr 1fr;
-  gap:24px
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(16px,2vw,26px)
 }
-.reward-main,.reward-secondary{
-  border-radius:28px;
-  position:relative;
-  overflow:hidden;
-  min-height:520px;
-  padding:43px
-}
-.reward-main{
-  background:#ff6b29;
-  color:#fff
-}
-.pill{
-  display:inline-block;
-  font-size:12px;
-  letter-spacing:-.02em;
-  border:1px solid #ffffff70;
-  border-radius:30px;
-  padding:7px 13px;
-  margin-bottom:26px
-}
-.reward-main h3,.reward-secondary h3{
-  font-size:34px;
-  line-height:1.35;
-  font-weight:700;
-  position:relative;
-  z-index:2
-}
-.reward-main p,.reward-secondary p{
-  font-size:16px;
-  line-height:1.7;
-  margin-top:18px;
-  letter-spacing:-.03em;
-  position:relative;
-  z-index:2
-}
-.reward-main p{
-  color:#ffe2d4
-}
-.reward-secondary{
-  background:#f3f4f5
-}
-.mini-label{
-  color:#737c77;
-  font-size:13px;
-  font-weight:650;
-  display:block;
-  margin-bottom:24px
-}
-.reward-secondary p{
-  color:#85898f
-}
-.reward-secondary img{
-  position:absolute;
-  bottom:0;
-  right:-30px;
-  width:390px;
-  mix-blend-mode:multiply
-}
-.reward-bottom{
-  position:absolute;
-  bottom:30px;
-  left:43px;
-  right:43px;
+.reward-card{
   display:flex;
-  justify-content:space-between;
+  flex-direction:column;
+  min-height:360px;
+  aspect-ratio:1.06;
+  padding:clamp(22px,3vw,38px) clamp(20px,2.5vw,32px);
+  border-radius:20px;
+  color:#fff;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat
+}
+.reward-invite{
+  background-color:#383a3a;
+  background-image:linear-gradient(#0002,transparent 60%),url('/assets/card_01.png')
+}
+.reward-shop{
+  background-color:#251740;
+  background-image:linear-gradient(0deg,#110c27a6,transparent 28%),url('/assets/card_02.png')
+}
+.reward-card h3{
+  font-size:clamp(25px,3vw,39px);
+  line-height:1.2;
+  letter-spacing:-.04em
+}
+.reward-card p{
+  margin:12px 0 0;
+  font-size:clamp(14px,1.3vw,17px);
+  line-height:1.45;
+  color:#f2f2f2
+}
+.reward-card .reward-note{
+  margin-top:auto;
+  padding-top:40px;
   font-size:12px;
-  border-top:1px solid #ffffff50;
-  padding-top:19px;
-  color:#fff2e9;
-  z-index:2
+  line-height:1.4
 }
-.coin-scene{
-  position:absolute;
-  right:20px;
-  bottom:68px;
-  width:300px;
-  height:210px
-}
-.coin{
-  display:grid;
-  place-items:center;
-  position:absolute;
-  border:9px solid #ffc76e;
-  color:#fff0bc;
-  border-radius:50%;
-  background:#fba94c;
-  box-shadow:6px 6px 0 #e58b29,12px 19px 26px #9a400933;
-  font-weight:750;
-  transform:rotate(-20deg)
-}
-.coin-big{
-  font-size:84px;
-  width:136px;
-  height:136px;
-  right:37px;
-  top:43px
-}
-.coin-small{
-  width:70px;
-  height:70px;
-  font-size:38px;
-  left:2px;
-  top:80px;
-  transform:rotate(17deg)
-}
-.coin-last{
-  width:58px;
-  height:58px;
-  font-size:29px;
-  right:0;
-  top:1px;
-  transform:rotate(18deg)
-}
-.coin-spark{
-  position:absolute;
-  top:4px;
-  left:70px;
-  font-size:63px;
-  color:#ffd2b9
-}
-.reward-note{
-  margin-top:22px;
-  max-width:850px
+@media(max-width:767px){
+  .reward-grid{
+    grid-template-columns:minmax(0,1fr)
+  }
+  .reward-card p:not(.reward-note) br{
+    display:none
+  }
 }
 .lifestyle{
   min-height:640px;
@@ -1509,27 +1444,6 @@ dialog .fine-print{
   .payment-slip strong{
     font-size:13px
   }
-  .reward-main,.reward-secondary{
-    padding:32px;
-    min-height:490px
-  }
-  .reward-main h3,.reward-secondary h3{
-    font-size:30px
-  }
-  .reward-main p,.reward-secondary p{
-    font-size:14px
-  }
-  .reward-bottom{
-    left:32px;
-    right:32px;
-    font-size:11px
-  }
-  .coin-scene{
-    right:10px;
-    bottom:55px;
-    transform:scale(.85);
-    transform-origin:right bottom
-  }
   .app-stage-circle{
     width:390px;
     height:390px
@@ -1815,55 +1729,6 @@ dialog .fine-print{
   .visual-caption{
     bottom:-30px;
     font-size:9px
-  }
-  .reward-heading{
-    display:block;
-    margin-bottom:32px
-  }
-  .reward-heading .section-description{
-    font-size:15px;
-    margin-top:22px
-  }
-  .reward-grid{
-    grid-template-columns:1fr;
-    gap:16px
-  }
-  .reward-main,.reward-secondary{
-    padding:29px;
-    border-radius:20px;
-    min-height:440px
-  }
-  .reward-main h3,.reward-secondary h3{
-    font-size:29px
-  }
-  .reward-main p,.reward-secondary p{
-    font-size:14px
-  }
-  .pill{
-    margin-bottom:22px
-  }
-  .reward-bottom{
-    left:29px;
-    right:29px;
-    bottom:25px;
-    font-size:10px
-  }
-  .coin-scene{
-    bottom:51px;
-    right:13px;
-    transform:scale(.8)
-  }
-  .reward-secondary{
-    min-height:390px
-  }
-  .reward-secondary img{
-    width:310px;
-    right:-15px;
-    bottom:-5px
-  }
-  .reward-note{
-    font-size:10px;
-    margin-top:16px
   }
   .lifestyle{
     min-height:500px;
@@ -2207,9 +2072,6 @@ dialog .fine-print{
   }
   .card-front{
     top:150px
-  }
-  .reward-main,.reward-secondary{
-    padding:25px
   }
   .tax-section{
     padding:28px 23px
