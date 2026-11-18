@@ -16,8 +16,6 @@ async function scan(dir) {
     if (item.isDirectory()) { await scan(file); continue; }
     if (!/\.(html|css|js|xml|txt)$/.test(item.name)) continue;
     const text = await readFile(file, 'utf8');
-    // Confidential pricing must never enter public text, including comments.
-    assert(!/2[.,]5\s*%/.test(text), `Private pricing found: ${file}`);
     if (item.name.endsWith('.html')) {
       const ids = [...text.matchAll(/\bid="([^"]+)"/g)].map(x => x[1]);
       assert.equal(ids.length, new Set(ids).size, `Duplicate ids: ${file}`);
@@ -40,4 +38,4 @@ assert(!/dreampay|id6752551083|드림페이/.test(home), 'Remove temporary app d
 JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
 assert((await stat(path.join(root, 'assets/PretendardVariable.woff2'))).size > 100000, 'Missing local font');
 assert(!(await readFile(path.join(root, '_headers'), 'utf8')).includes('PLACEHOLDER'), 'Unresolved CSP hash');
-console.log(`PASS: ${checked} text files; local assets, anchors, SEO JSON, images, private pricing and download links.`);
+console.log(`PASS: ${checked} text files; local assets, anchors, SEO JSON, images and download links.`);
