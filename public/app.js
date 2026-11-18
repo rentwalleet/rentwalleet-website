@@ -1,3 +1,22 @@
+const siteHeader = document.querySelector('.site-header');
+const scrollPosition = () => {
+  const page = document.scrollingElement;
+  return Math.max(0, Math.min(window.scrollY, page.scrollHeight - page.clientHeight));
+};
+let previousScroll = scrollPosition();
+
+window.addEventListener('scroll', () => {
+  const currentScroll = scrollPosition();
+  if (currentScroll <= siteHeader.offsetHeight) {
+    siteHeader.classList.remove('is-hidden');
+  } else if (Math.abs(currentScroll - previousScroll) >= 6) {
+    siteHeader.classList.toggle('is-hidden', currentScroll > previousScroll);
+  } else {
+    return;
+  }
+  previousScroll = currentScroll;
+}, { passive: true });
+
 document.querySelectorAll('[data-store]').forEach(link => {
   link.addEventListener('click', event => {
     event.preventDefault();
