@@ -731,7 +731,7 @@ em{
 .lifestyle{
   min-height:640px;
   position:relative;
-  background:#eee url('/assets/lifestyle.jpg') center / cover no-repeat fixed;
+  background:#eee url('/assets/lifestyle_02.jpg') center / cover no-repeat fixed;
   display:flex;
   align-items:center;
   isolation:isolate
@@ -740,7 +740,6 @@ em{
   content:'';
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg,#eeeeee 10%,#eeeeeee8 35%,#eeeeee00 75%);
   z-index:-1
 }
 .lifestyle-content h2{
