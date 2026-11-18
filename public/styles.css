@@ -894,7 +894,10 @@ em{
   padding-block:100px
 }
 .faq-all-link{
-  margin-top:24px
+  display:flex;
+  width:fit-content;
+  margin-top:24px;
+  margin-left:auto
 }
 .faq-page{
   max-width:820px;
