@@ -407,32 +407,34 @@ em{
 }
 .intro{
   text-align:center;
-  padding-top:140px
+  padding-block:64px
+}
+.intro>.eyebrow{
+  color:#555;
+  font-size:16px
 }
 .intro h2{
-  font-size:58px
+  font-size:clamp(32px,4.4vw,56px);
+  line-height:1.08
 }
 .intro .section-description{
   margin-top:26px
 }
 .benefit-strip{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  margin-top:80px;
-  text-align:left;
-  border-block:1px solid var(--line);
-  padding:37px 0
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+  max-width:826px;
+  margin:80px auto 0
 }
-.benefit-strip>div{
-  padding-left:44px;
-  border-right:1px solid var(--line);
-  position:relative
-}
-.benefit-strip>div:first-child{
-  padding-left:30px
-}
-.benefit-strip>div:last-child{
-  border-right:0
+.benefit-strip img{
+  display:block;
+  width:min(100%,200px);
+  height:auto;
+  aspect-ratio:1;
+  object-fit:cover;
+  border-radius:50%;
+  margin:0 auto 24px
 }
 .line-icon{
   display:inline-flex;
@@ -448,11 +450,12 @@ em{
 }
 .benefit-strip h3{
   font-size:20px;
-  margin-bottom:8px
+  color:var(--orange);
+  margin-bottom:4px
 }
 .benefit-strip p{
-  font-size:15px;
-  color:#85898f
+  font-size:16px;
+  color:#555
 }
 .payment-section{
   background:#f7f8fa;
@@ -1673,8 +1676,7 @@ dialog .fine-print{
     line-height:1.3
   }
   .intro{
-    text-align:left;
-    padding-bottom:74px
+    padding-block:56px
   }
   .section-description{
     font-size:16px;
@@ -1683,17 +1685,12 @@ dialog .fine-print{
   }
   .benefit-strip{
     margin-top:40px;
-    padding:0;
-    display:block
+    grid-template-columns:1fr;
+    gap:32px
   }
-  .benefit-strip>div,.benefit-strip>div:first-child{
-    border-right:0;
-    border-bottom:1px solid var(--line);
-    padding:24px 4px;
-    min-height:95px
-  }
-  .benefit-strip>div:last-child{
-    border-bottom:0
+  .benefit-strip img{
+    width:min(100%,168px);
+    margin-bottom:14px
   }
   .line-icon{
     font-size:29px;
