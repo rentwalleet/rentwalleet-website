@@ -12,7 +12,7 @@
   <script src="/faq.js" defer></script>
 </head>
 
-<body>
+<body id="top">
   <main class="wrap faq-page">
     <a class="text-link" href="/#faq">← 첫 화면으로 돌아가기</a>
     <h1>자주 묻는 질문</h1>
@@ -230,6 +230,15 @@
       </details>
     </div>
   </main>
+  <div class="floating-actions">
+    <a class="floating-action top-action" href="#top" aria-label="페이지 상단으로 이동">
+      <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22">
+        <path d="M12 19V5m-6 6 6-6 6 6" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span>맨 위로</span>
+    </a>
+  </div>
 </body>
 
 </html>
