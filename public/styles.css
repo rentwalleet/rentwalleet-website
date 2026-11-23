@@ -736,7 +736,7 @@ em{
 }
 .manage-section{
   background:#feede7;
-  padding-top:clamp(52px,7vw,88px);
+  padding-block:clamp(52px,7vw,88px) clamp(32px,4vw,56px);
   text-align:center
 }
 .manage-intro .eyebrow{
@@ -765,7 +765,7 @@ em{
   margin:clamp(24px,2.5vw,32px) auto 0
 }
 .app-stage{
-  aspect-ratio:809 / 700;
+  aspect-ratio:809 / 780;
   overflow:hidden
 }
 .app-stage>img{
@@ -810,7 +810,7 @@ em{
 }
 .tax-layout{
   display:grid;
-  grid-template-columns:1.15fr 1fr;
+  grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);
   align-items:center;
   gap:clamp(28px,5vw,64px);
   max-width:1010px;
@@ -833,8 +833,25 @@ em{
   line-height:1.35
 }
 .tax-number{
-  color:#fff;
-  min-width:0
+  position:relative;
+  min-width:0;
+  padding:clamp(22px,2vw,26px) clamp(20px,4.2vw,54px);
+  border:2px dashed #f9c5ad;
+  border-radius:22px;
+  background:#694239;
+  box-shadow:0 12px 26px #79362238;
+  color:#fff
+}
+.tax-number::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:54%;
+  width:clamp(40px,4.2vw,54px);
+  aspect-ratio:1;
+  transform:translate(-50%,-53%);
+  background:url('/assets/pin-01.png') center / contain no-repeat;
+  pointer-events:none
 }
 .tax-number h3{
   font-size:clamp(19px,1.9vw,24px)
@@ -851,12 +868,12 @@ em{
   margin-bottom:.22em
 }
 .tax-rate img{
-  width:clamp(152px,24vw,302px);
+  width:clamp(152px,21vw,270px);
   min-width:0
 }
 .tax-number p{
-  font-size:clamp(13px,1.2vw,15px);
-  line-height:1.7;
+  font-size:13px;
+  line-height:1.5;
   margin-top:10px
 }
 .steps-section>h2{
@@ -1807,7 +1824,7 @@ dialog .fine-print{
   }
   .tax-layout{
     grid-template-columns:1fr;
-    gap:28px
+    gap:44px
   }
   .tax-rate img{
     width:clamp(152px,54vw,260px)
