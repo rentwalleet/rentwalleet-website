@@ -765,11 +765,19 @@ em{
   margin:clamp(24px,2.5vw,32px) auto 0
 }
 .app-stage{
+  position:relative;
   aspect-ratio:809 / 780;
   overflow:hidden
 }
-.app-stage>img{
-  width:100%
+.app-stage-phone{
+  width:66%
+}
+.app-stage-hand{
+  position:absolute;
+  top:55%;
+  left:36%;
+  width:64%;
+  pointer-events:none
 }
 .feature-rows{
   position:relative;
