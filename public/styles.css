@@ -674,11 +674,11 @@ em{
 }
 .reward-invite{
   background-color:#383a3a;
-  background-image:linear-gradient(#0002,transparent 60%),url('/assets/card_01.png')
+  background-image:linear-gradient(#0002,transparent 60%),url('/assets/card_02.png')
 }
 .reward-shop{
   background-color:#251740;
-  background-image:linear-gradient(0deg,#110c27a6,transparent 28%),url('/assets/card_02.png')
+  background-image:linear-gradient(0deg,#110c27a6,transparent 28%),url('/assets/card_03.png')
 }
 .reward-card h3{
   font-size:clamp(25px,3vw,39px);
@@ -733,122 +733,134 @@ em{
   margin-top:28px;
   letter-spacing:-.035em
 }
-.app-stage{
-  height:650px;
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center
+.manage-section{
+  background:#feede7;
+  padding-top:clamp(52px,7vw,88px);
+  text-align:center
 }
-.app-stage-circle{
-  position:absolute;
-  width:495px;
-  height:495px;
-  background:#f5f2ed;
-  border-radius:50%
+.manage-intro .eyebrow{
+  color:#6d6460;
+  font-size:18px;
+  font-weight:500;
+  letter-spacing:0;
+  margin-bottom:10px
+}
+.manage-intro h2{
+  font-size:clamp(32px,4.2vw,52px);
+  line-height:1.18;
+  color:#151515
+}
+.manage-intro .section-description{
+  margin:clamp(20px,3vw,32px) auto 0;
+  font-size:clamp(16px,2vw,23px);
+  line-height:1.4;
+  color:#58514e
+}
+.manage-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:end;
+  max-width:1040px;
+  margin:clamp(24px,2.5vw,32px) auto 0
+}
+.app-stage{
+  aspect-ratio:809 / 700;
+  overflow:hidden
 }
 .app-stage>img{
-  width:265px;
-  position:relative;
-  transform:rotate(-7deg);
-  border-radius:40px;
-  filter:drop-shadow(10px 24px 23px #00000015)
-}
-.app-badge{
-  position:absolute;
-  bottom:42px;
-  padding:19px 24px;
-  border:1px solid #efefef;
-  background:#fff;
-  box-shadow:0 15px 35px #0000000c;
-  border-radius:13px;
-  font-size:14px;
-  font-weight:600;
-  transform:rotate(3deg)
-}
-.app-badge>span{
-  color:var(--orange);
-  margin-right:9px
+  width:100%
 }
 .feature-rows{
-  margin:36px 0 25px
+  position:relative;
+  isolation:isolate;
+  display:grid;
+  gap:clamp(20px,3vw,38px);
+  padding: clamp(24px,4vw,56px) 32px 20px 0
 }
-.feature-rows>div{
-  display:flex;
-  gap:20px;
-  padding-block:22px;
-  border-bottom:1px solid var(--line)
-}
-.feature-rows>div:last-child{
-  border:0
-}
-.feature-rows>div>span{
-  font-size:12px;
-  color:#babec2;
-  padding-top:5px;
-  font-weight:600
+.feature-rows::before{
+  content:'';
+  position:absolute;
+  inset:8% -2% 7% 0;
+  z-index:-1;
+  background:linear-gradient(90deg,transparent,#ffdfd0);
+  clip-path:polygon(0 0,58% 0,100% 50%,58% 100%,0 100%)
 }
 .feature-rows h3{
-  font-size:19px
+  display:inline-block;
+  padding:6px 22px;
+  border:1px dashed var(--orange);
+  border-radius:13px;
+  background:#fff5ef;
+  color:#202326;
+  font-size:clamp(17px,1.85vw,22px)
 }
-.feature-rows p{
-  font-size:15px;
-  line-height:1.65;
-  color:#8b8e93;
-  margin-top:8px
+.feature-rows>div p{
+  color:#58514e;
+  font-size:clamp(15px,1.55vw,18px);
+  line-height:1.5;
+  margin-top:10px
+}
+.feature-rows .fine-print{
+  margin:0;
+  color:#665d58
 }
 .tax-section{
-  background:#f7f8fa;
-  border-radius:28px;
-  padding:57px 64px;
-  display:flex;
+  color:#55352e;
+  background:
+    url('/assets/mothion-bul-01.png') left bottom / clamp(130px,16vw,220px) auto no-repeat,
+    url('/assets/mothion-bul-02.png') right top / clamp(104px,13vw,185px) auto no-repeat,
+    linear-gradient(120deg,#ffa57c 12%,#ff936c 53%,#ce6a43 82%)
+}
+.tax-layout{
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
   align-items:center;
-  justify-content:space-between;
-  gap:60px
+  gap:clamp(28px,5vw,64px);
+  max-width:1010px;
+  padding-block:clamp(52px,6vw,80px)
 }
-.tax-section .eyebrow{
-  font-size:13px;
-  margin-bottom:15px
+.tax-copy .eyebrow{
+  color:inherit;
+  font-size:clamp(15px,1.6vw,20px);
+  font-weight:500;
+  letter-spacing:0;
+  margin-bottom:8px
 }
-.tax-section h2{
-  font-size:35px;
+.tax-copy h2{
+  font-size:clamp(32px,4.3vw,56px);
+  line-height:1.14
+}
+.tax-copy>p:last-child{
+  margin-top:clamp(16px,3vw,36px);
+  font-size:clamp(17px,2vw,26px);
   line-height:1.35
 }
-.tax-section>div>p:last-child{
-  font-size:15px;
-  line-height:1.7;
-  color:#85898f;
-  margin-top:17px
-}
 .tax-number{
-  min-width:340px
+  color:#fff;
+  min-width:0
 }
-.tax-number>span{
-  font-size:15px;
-  color:#80868a
+.tax-number h3{
+  font-size:clamp(19px,1.9vw,24px)
 }
-.tax-number strong{
-  display:block;
-  font-size:100px;
-  line-height:1.15;
-  color:var(--orange);
-  letter-spacing:-.07em;
-  font-weight:700
+.tax-rate{
+  display:flex;
+  align-items:flex-end;
+  gap:8px;
+  font-size:clamp(34px,4.2vw,54px);
+  line-height:1
 }
-.tax-number strong small{
-  font-size:25px;
-  font-weight:600;
-  letter-spacing:-.03em;
-  margin-right:15px
+.tax-rate span{
+  flex:none;
+  margin-bottom:.22em
 }
-.tax-number strong small:last-child{
-  font-size:52px;
-  margin-left:5px;
-  margin-right:0
+.tax-rate img{
+  width:clamp(152px,24vw,302px);
+  min-width:0
 }
-.tax-section .tax-number p{
-  font-size:12px!important;
-  line-height:1.8!important
+.tax-number p{
+  font-size:clamp(13px,1.2vw,15px);
+  line-height:1.7;
+  margin-top:10px
 }
 .steps-section>h2{
   font-size:51px
@@ -1486,14 +1498,6 @@ dialog .fine-print{
   .payment-slip strong{
     font-size:13px
   }
-  .app-stage-circle{
-    width:390px;
-    height:390px
-  }
-  .tax-section{
-    padding:50px;
-    gap:30px
-  }
   .faq-layout{
     gap:50px
   }
@@ -1790,71 +1794,26 @@ dialog .fine-print{
     font-size:16px;
     margin-top:24px
   }
-  .manage-section .split{
-    flex-direction:column-reverse
-  }
-  .app-stage{
-    height:510px
-  }
-  .app-stage>img{
-    width:215px;
-    border-radius:31px
-  }
-  .app-stage-circle{
-    width:320px;
-    height:320px
-  }
-  .app-badge{
-    bottom:4px;
-    font-size:12px;
-    padding:16px 20px
+  .manage-layout{
+    grid-template-columns:1fr;
+    gap:24px
   }
   .feature-rows{
-    margin-top:26px
+    padding:0
   }
-  .feature-rows>div{
-    padding-block:19px;
-    gap:16px
+  .feature-rows::before{
+    display:none
   }
-  .feature-rows h3{
-    font-size:17px
+  .app-stage{
+    width:min(100%,440px);
+    margin-inline:auto
   }
-  .feature-rows p{
-    font-size:14px
+  .tax-layout{
+    grid-template-columns:1fr;
+    gap:28px
   }
-  .tax-section{
-    width:calc(100% - 44px);
-    padding:33px 28px;
-    display:block;
-    border-radius:20px
-  }
-  .tax-section h2{
-    font-size:30px
-  }
-  .tax-section>div>p:last-child{
-    font-size:14px
-  }
-  .tax-number{
-    min-width:0;
-    margin-top:35px;
-    border-top:1px solid #e2e5e9;
-    padding-top:25px
-  }
-  .tax-number>span{
-    font-size:13px
-  }
-  .tax-number strong{
-    font-size:85px;
-    margin-top:5px
-  }
-  .tax-number strong small{
-    font-size:21px
-  }
-  .tax-number strong small:last-child{
-    font-size:42px
-  }
-  .tax-section .tax-number p{
-    font-size:10px!important
+  .tax-rate img{
+    width:clamp(152px,54vw,260px)
   }
   .steps-section>h2{
     font-size:36px
@@ -2114,9 +2073,6 @@ dialog .fine-print{
   }
   .card-front{
     top:150px
-  }
-  .tax-section{
-    padding:28px 23px
   }
 }
 @media(prefers-reduced-motion:reduce){
