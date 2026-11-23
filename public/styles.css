@@ -418,7 +418,7 @@ em{
 .intro>.section-description{
   max-width:848px;
   margin-inline:auto;
-  text-align:left
+  text-align:center
 }
 .intro>.eyebrow{
   color:#555;
@@ -644,6 +644,7 @@ em{
   max-width:924px
 }
 .reward-heading{
+  text-align:center;
   margin-bottom:clamp(28px,4.2vw,54px)
 }
 .reward-heading h2{
@@ -799,10 +800,6 @@ em{
   font-size:clamp(15px,1.55vw,18px);
   line-height:1.5;
   margin-top:10px
-}
-.feature-rows .fine-print{
-  margin:0;
-  color:#665d58
 }
 .tax-section{
   color:#55352e;
