@@ -884,44 +884,90 @@ em{
   line-height:1.5;
   margin-top:10px
 }
-.steps-section>h2{
-  font-size:51px
+.steps-section{
+  background:#f7f8fa;
+  padding-block:clamp(64px,6vw,88px) clamp(64px,8vw,116px);
+  text-align:center
+}
+.steps-section .eyebrow{
+  color:#555;
+  font-size:clamp(16px,1.55vw,22px);
+  font-weight:400;
+  letter-spacing:0;
+  margin-bottom:12px
+}
+.steps-section h2{
+  color:#111;
+  font-size:clamp(34px,4.3vw,62px);
+  line-height:1.15
 }
 .steps{
+  --step-circle:clamp(104px,10.5vw,150px);
+  position:relative;
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  margin:56px 0 24px
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  max-width:900px;
+  margin:clamp(40px,5vw,72px) auto 0
+}
+.steps::before{
+  content:'';
+  position:absolute;
+  top:calc(var(--step-circle) / 2);
+  inset-inline:-5%;
+  height:36px;
+  transform:translateY(-50%);
+  background:linear-gradient(90deg,transparent,#ececec 10% 90%,transparent)
 }
 .steps article{
-  position:relative;
-  padding:30px 30px 90px;
-  background:#f7f8fa;
-  border-radius:20px;
-  min-height:280px
+  position:relative
+}
+.steps article:not(:last-child)::after{
+  content:'';
+  position:absolute;
+  top:calc(var(--step-circle) / 2);
+  right:0;
+  width:12px;
+  height:12px;
+  border-top:3px solid #999da3;
+  border-right:3px solid #999da3;
+  transform:translate(25%,-50%) rotate(45deg)
+}
+.step-icon{
+  display:grid;
+  place-items:center;
+  width:var(--step-circle);
+  aspect-ratio:1;
+  margin-inline:auto;
+  border:2px solid #ebebeb;
+  border-radius:50%;
+  background:#fff
+}
+.step-icon img{
+  width:57%;
+  height:57%;
+  object-fit:contain
 }
 .step-number{
-  font-size:14px;
-  font-weight:700;
-  color:var(--orange);
-  margin-bottom:25px;
-  display:block
+  display:block;
+  margin:18px 0;
+  color:#696d74;
+  font-size:clamp(14px,1.25vw,18px);
+  font-weight:700
 }
 .steps h3{
-  font-size:23px;
-  margin-bottom:15px
+  color:#111;
+  font-size:clamp(21px,1.7vw,25px);
+  margin-bottom:10px
 }
 .steps p{
-  font-size:16px;
-  color:#85898f;
-  line-height:1.7
+  font-size:clamp(16px,1.45vw,21px);
+  color:#555;
+  line-height:1.45
 }
-.step-symbol{
-  position:absolute;
-  bottom:20px;
-  right:30px;
-  font-size:40px;
-  color:#c8ccd1
+.steps-section .fine-print{
+  margin:clamp(36px,6vw,88px) auto 0;
+  color:#696d74;
+  font-size:clamp(13px,1.2vw,17px)
 }
 .faq-section{
   background:#fafafa;
@@ -1837,34 +1883,13 @@ dialog .fine-print{
   .tax-rate img{
     width:clamp(152px,54vw,260px)
   }
-  .steps-section>h2{
-    font-size:36px
-  }
   .steps{
     grid-template-columns:1fr;
-    gap:14px;
-    margin-top:32px;
-    margin-bottom:20px
+    gap:36px
   }
-  .steps article{
-    min-height:185px;
-    padding:25px 27px
-  }
-  .step-number{
-    margin-bottom:15px;
-    font-size:12px
-  }
-  .steps h3{
-    font-size:21px;
-    margin-bottom:10px
-  }
-  .steps p{
-    font-size:14px
-  }
-  .step-symbol{
-    font-size:36px;
-    bottom:22px;
-    right:26px
+  .steps::before,
+  .steps article:not(:last-child)::after{
+    display:none
   }
   .faq-section{
     padding-block:74px
