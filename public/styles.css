@@ -736,7 +736,7 @@ em{
 }
 .manage-section{
   background:#feede7;
-  padding-block:clamp(52px,7vw,88px) clamp(32px,4vw,56px);
+  padding-top:clamp(52px,7vw,88px);
   text-align:center
 }
 .manage-intro .eyebrow{
@@ -766,7 +766,7 @@ em{
 }
 .app-stage{
   position:relative;
-  aspect-ratio:809 / 780;
+  aspect-ratio:809 / 768;
   overflow:hidden
 }
 .app-stage-phone{
@@ -775,7 +775,7 @@ em{
 .app-stage-hand{
   position:absolute;
   top:55%;
-  left:36%;
+  left:37%;
   width:64%;
   pointer-events:none
 }
@@ -784,7 +784,7 @@ em{
   isolation:isolate;
   display:grid;
   gap:clamp(20px,3vw,38px);
-  padding: clamp(24px,4vw,56px) 32px 20px 0
+  padding: clamp(24px,4vw,56px) 32px clamp(32px,4vw,48px) 0
 }
 .feature-rows::before{
   content:'';
