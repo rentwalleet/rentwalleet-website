@@ -1218,26 +1218,24 @@ em{
   place-items:center;
   min-width:0
 }
-.download-art>img{
+.download-art>img:first-child{
   width:min(78%,390px)
 }
 .download-spark{
   position:absolute;
   width:var(--spark-size,21%);
-  aspect-ratio:1;
-  background:repeating-conic-gradient(from -5deg,#fff 0deg 10deg,transparent 10deg 45deg);
-  mask:radial-gradient(circle,transparent 0 45%,#000 46% 70%,transparent 71%)
+  height:auto
 }
-.download-spark:nth-of-type(1){
+.download-spark:nth-of-type(2){
   top:0;
   right:4%
 }
-.download-spark:nth-of-type(2){
+.download-spark:nth-of-type(3){
   --spark-size:13%;
   top:28%;
   right:0
 }
-.download-spark:nth-of-type(3){
+.download-spark:nth-of-type(4){
   top:55%;
   left:0
 }
