@@ -1147,30 +1147,37 @@ em{
   letter-spacing:-.025em
 }
 .download-section{
-  background:#ff6b29;
-  color:#fff;
+  background:linear-gradient(125deg,#ffa57e 12%,#ff946d 50%,#d87346 85%);
+  color:#15100e;
   overflow:hidden;
-  padding-block:100px
+  padding-block:clamp(44px,4vw,58px)
 }
 .download-layout{
   display:grid;
-  grid-template-columns:1.2fr 1fr;
-  gap:40px;
-  align-items:center
+  grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);
+  max-width:1070px;
+  gap:clamp(24px,4vw,54px);
+  align-items:start
+}
+.download-layout>div:first-child{
+  padding-top:clamp(0px,1.5vw,22px)
 }
 .download-section .eyebrow{
-  font-size:12px;
-  letter-spacing:.12em;
-  color:#ffe5d6
+  color:#593831;
+  font-size:clamp(15px,1.5vw,21px);
+  font-weight:400;
+  letter-spacing:0;
+  margin-bottom:14px
 }
 .download-section h2{
-  font-size:64px
+  font-size:clamp(38px,4.3vw,60px);
+  line-height:1.12
 }
 .download-section h2+p{
-  font-size:19px;
-  line-height:1.7;
-  color:#ffe5d6;
-  margin-top:25px
+  font-size:clamp(18px,2vw,27px);
+  line-height:1.4;
+  color:#593831;
+  margin-top:clamp(20px,3vw,38px)
 }
 .store-buttons{
   display:flex;
@@ -1209,48 +1216,30 @@ em{
   position:relative;
   display:grid;
   place-items:center;
-  height:390px
-}
-.download-orbit{
-  position:absolute;
-  width:355px;
-  height:355px;
-  border:1px solid #ffb98d;
-  border-radius:50%
-}
-.download-orbit:after{
-  content:'';
-  position:absolute;
-  inset:-40px;
-  border:1px solid #ffa97666;
-  border-radius:50%
+  min-width:0
 }
 .download-art>img{
-  width:220px;
-  border-radius:42px;
-  transform:rotate(-12deg);
-  box-shadow:15px 32px 35px #90380240
+  width:min(78%,390px)
 }
-.download-plus{
+.download-spark{
   position:absolute;
-  right:0;
-  top:15px;
-  font-size:55px;
-  color:#ffe4c4
+  width:var(--spark-size,21%);
+  aspect-ratio:1;
+  background:repeating-conic-gradient(from -5deg,#fff 0deg 10deg,transparent 10deg 45deg);
+  mask:radial-gradient(circle,transparent 0 45%,#000 46% 70%,transparent 71%)
 }
-.download-star{
-  position:absolute;
-  bottom:20px;
-  left:10px;
-  color:#ffc39a;
-  font-size:90px
+.download-spark:nth-of-type(1){
+  top:0;
+  right:4%
 }
-.download-art-label{
-  position:absolute;
-  bottom:-15px;
-  letter-spacing:.25em;
-  font-size:10px;
-  color:#ffdbbf
+.download-spark:nth-of-type(2){
+  --spark-size:13%;
+  top:28%;
+  right:0
+}
+.download-spark:nth-of-type(3){
+  top:55%;
+  left:0
 }
 .site-footer{
   background:#f7f8fa;
@@ -1654,16 +1643,6 @@ dialog .fine-print{
   .faq-list summary{
     font-size:16px
   }
-  .download-section h2{
-    font-size:57px
-  }
-  .download-art>img{
-    width:185px
-  }
-  .download-orbit{
-    width:280px;
-    height:280px
-  }
   .store-button{
     font-size:14px;
     padding:15px 17px;
@@ -1997,25 +1976,9 @@ dialog .fine-print{
     font-size:14px;
     padding:0 10px 23px 0
   }
-  .download-section{
-    padding-block:70px
-  }
   .download-layout{
-    display:flex;
-    flex-direction:column;
-    align-items:stretch;
-    gap:25px
-  }
-  .download-section .eyebrow{
-    font-size:9px;
-    letter-spacing:.1em
-  }
-  .download-section h2{
-    font-size:48px
-  }
-  .download-section h2+p{
-    font-size:16px;
-    margin-top:23px
+    grid-template-columns:minmax(0,1fr);
+    gap:30px
   }
   .store-buttons{
     margin-top:29px;
@@ -2044,35 +2007,8 @@ dialog .fine-print{
     max-width:310px
   }
   .download-art{
-    height:285px;
-    max-width:360px;
-    width:100%;
-    margin:10px auto 0
-  }
-  .download-art>img{
-    width:155px;
-    border-radius:30px
-  }
-  .download-orbit{
-    width:230px;
-    height:230px
-  }
-  .download-orbit:after{
-    inset:-23px
-  }
-  .download-plus{
-    font-size:40px;
-    right:18px;
-    top:25px
-  }
-  .download-star{
-    font-size:65px;
-    left:15px;
-    bottom:10px
-  }
-  .download-art-label{
-    font-size:8px;
-    bottom:-10px
+    width:min(100%,380px);
+    margin-inline:auto
   }
   .site-footer{
     padding-top:45px;
