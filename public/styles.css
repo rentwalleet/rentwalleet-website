@@ -970,14 +970,96 @@ em{
   font-size:clamp(13px,1.2vw,17px)
 }
 .faq-section{
-  background:#fafafa;
-  padding-block:100px
+  background:linear-gradient(180deg,#f7f8fa,#fff);
+  padding-block:clamp(48px,5vw,72px) clamp(64px,7vw,96px)
 }
 .faq-all-link{
   display:flex;
+  align-items:center;
+  justify-content:flex-end;
   width:fit-content;
-  margin-top:24px;
-  margin-left:auto
+  min-height:44px;
+  margin:0 0 8px auto;
+  color:#666b73;
+  font-size:15px
+}
+.faq-all-link:hover{
+  text-decoration:underline
+}
+.faq-section .faq-layout{
+  max-width:1060px;
+  grid-template-columns:minmax(0,.42fr) minmax(0,1fr);
+  gap:clamp(24px,3vw,40px)
+}
+.faq-section .eyebrow{
+  color:#555;
+  font-size:clamp(16px,1.5vw,20px);
+  font-weight:500;
+  letter-spacing:0;
+  margin-bottom:10px
+}
+.faq-section h2{
+  font-size:clamp(36px,4.3vw,58px);
+  line-height:1.12;
+  color:#111
+}
+.faq-section .faq-list{
+  display:grid;
+  gap:clamp(14px,1.9vw,26px);
+  margin:0
+}
+.faq-section .faq-list details{
+  border:0;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 4px 14px #2023260a
+}
+.faq-section .faq-list summary{
+  min-height:86px;
+  padding:20px clamp(18px,2.3vw,32px);
+  border-radius:inherit;
+  color:#111;
+  font-weight:700
+}
+.faq-section summary::after{
+  content:'';
+  flex:0 0 11px;
+  height:11px;
+  margin-inline:3px;
+  border-right:3px solid #92979d;
+  border-bottom:3px solid #92979d;
+  transform:translateY(-3px) rotate(45deg);
+  transition:transform .22s ease
+}
+.faq-section details[open] summary::after{
+  transform:translateY(3px) rotate(225deg)
+}
+.faq-section .faq-list details p{
+  color:#555b61;
+  padding:0 clamp(18px,2.3vw,32px) 24px
+}
+@media(prefers-reduced-motion:no-preference){
+  @supports (interpolate-size:allow-keywords) and selector(details::details-content){
+    .faq-section details::details-content{
+      interpolate-size:allow-keywords;
+      block-size:0;
+      overflow:clip;
+      transition:block-size .32s cubic-bezier(.22,1.35,.45,1),content-visibility .32s allow-discrete
+    }
+    .faq-section details[open]::details-content{
+      block-size:auto
+    }
+  }
+}
+@media(max-width:767px){
+  .faq-section .faq-layout{
+    display:grid;
+    grid-template-columns:1fr
+  }
+  .faq-section .faq-list summary{
+    min-height:68px;
+    padding-block:16px
+  }
 }
 .faq-page{
   max-width:820px;
@@ -1890,9 +1972,6 @@ dialog .fine-print{
   .steps::before,
   .steps article:not(:last-child)::after{
     display:none
-  }
-  .faq-section{
-    padding-block:74px
   }
   .faq-layout{
     display:block
